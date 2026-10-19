@@ -28,8 +28,13 @@ jobs:
 
       - name: Compile C application
         run: gcc expo/expo.c -lm -o sdo-expo
+      - name: Run an example program
+        run: output=$(./sdo-expo 2 3)
+             echo "observed:$output"
+             test "output"="8"
+        
+  
 
-      # TASK 1.1: Add your functional test step here.
 
   # ============================================================
   # TASK 1.2 — THE UNPROTECTED DOCKER BUILD
